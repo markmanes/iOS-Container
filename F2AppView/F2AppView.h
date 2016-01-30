@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <WebKit/WebKit.h>
 
 @class F2AppView;
 
@@ -33,7 +34,7 @@
 
 @end
 
-@interface F2AppView : UIView <UIWebViewDelegate>
+@interface F2AppView : UIView <UIWebViewDelegate, WKNavigationDelegate, WKScriptMessageHandler>
 
 /** Use this method to set the configuration of the F2 app.
     for more info on supported configuration properies, see //http://docs.openf2.org/sdk/classes/F2.AppConfig.html
@@ -64,7 +65,6 @@
 
 /** Use this method to send any Javascript functions to the app.
  @param javaScript The javascript to run
- @return the sting returned after evaluating the javascript
  */
 -(NSString*)sendJavaScript:(NSString *)javaScript;
 

@@ -117,38 +117,38 @@
     [self.view addSubview:self.f2WatchListView];
     
     //Create the Quote F2 View
-    self.f2QuoteView = [[F2AppView alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.f2WatchListView.frame)+padding, contentStart, 350, halfHeight)];
-    [self.f2QuoteView setDelegate:self];
-    [self.f2QuoteView setScrollable:NO];
-    [self.f2QuoteView setScale:0.9f];
-    [self.f2QuoteView setAppJSONConfig:@"[{\"appId\": \"com_openf2_examples_javascript_quote\",\"manifestUrl\": \"http://www.openf2.org/Examples/Apps\",\"name\": \"Quote\", \"context\":{\"symbol\":\"MSFT\"}}]"];
-    [self.f2QuoteView loadApp];
-    [self.view addSubview:self.f2QuoteView];
-
-    //Create the Chart F2 View
-    self.f2ChartView = [[F2AppView alloc]initWithFrame:CGRectMake(padding, CGRectGetMaxY(self.f2QuoteView.frame)+padding, CGRectGetMaxX(_f2QuoteView.frame)-padding, halfHeight)];
-    [self.f2ChartView setDelegate:self];
-    [self.f2ChartView setScrollable:NO];
-    [self.f2ChartView setScale:0.8f];
-    [self.f2ChartView setAdditionalCss:@"h2 {font-size:23px}"];
-    [self.f2ChartView setAppJSONConfig:@"[{\"appId\": \"com_openf2_examples_csharp_chart\",\"manifestUrl\": \"http://www.openf2.org/Examples/Apps\",\"name\": \"One Year Price Movement\"}]"];
-    [self.f2ChartView loadApp];
-    [self.view addSubview:_f2ChartView];
-
+//    self.f2QuoteView = [[F2AppView alloc]initWithFrame:CGRectMake(CGRectGetMaxX(self.f2WatchListView.frame)+padding, contentStart, 350, halfHeight)];
+//    [self.f2QuoteView setDelegate:self];
+//    [self.f2QuoteView setScrollable:NO];
+//    [self.f2QuoteView setScale:0.9f];
+//    [self.f2QuoteView setAppJSONConfig:@"[{\"appId\": \"com_openf2_examples_javascript_quote\",\"manifestUrl\": \"http://www.openf2.org/Examples/Apps\",\"name\": \"Quote\", \"context\":{\"symbol\":\"MSFT\"}}]"];
+//    [self.f2QuoteView loadApp];
+//    [self.view addSubview:self.f2QuoteView];
+//
+//    //Create the Chart F2 View
+//    self.f2ChartView = [[F2AppView alloc]initWithFrame:CGRectMake(padding, CGRectGetMaxY(self.f2QuoteView.frame)+padding, CGRectGetMaxX(_f2QuoteView.frame)-padding, halfHeight)];
+//    [self.f2ChartView setDelegate:self];
+//    [self.f2ChartView setScrollable:NO];
+//    [self.f2ChartView setScale:0.8f];
+//    [self.f2ChartView setAdditionalCss:@"h2 {font-size:23px}"];
+//    [self.f2ChartView setAppJSONConfig:@"[{\"appId\": \"com_openf2_examples_csharp_chart\",\"manifestUrl\": \"http://www.openf2.org/Examples/Apps\",\"name\": \"One Year Price Movement\"}]"];
+//    [self.f2ChartView loadApp];
+//    [self.view addSubview:_f2ChartView];
+//
     //Create Flip Containter
     CGFloat flipX = CGRectGetMaxX(_f2QuoteView.frame)+padding;
     UIView* flipContainer = [[UIView alloc]initWithFrame:CGRectMake(flipX, contentStart, self.view.bounds.size.width-flipX-padding, fullHeight)];
     [self.view addSubview:flipContainer];
-    
-    //Create the Custom F2 View
-    self.f2CustomView = [[F2AppView alloc]initWithFrame:flipContainer.bounds];
-    [self.f2CustomView setDelegate:self];
-    [self.f2CustomView setScrollable:YES];
-    [self.f2CustomView setScale:0.9f];
-    [self.f2CustomView setAppJSONConfig:@"[{\"appId\": \"com_openf2_examples_csharp_stocknews\",\n\"manifestUrl\": \"http://www.openf2.org/Examples/Apps\",\n\"name\": \"Stock News\"\n}]"];
-    [self.f2CustomView loadApp];
-    [flipContainer addSubview:self.f2CustomView];
-    
+//
+//    //Create the Custom F2 View
+//    self.f2CustomView = [[F2AppView alloc]initWithFrame:flipContainer.bounds];
+//    [self.f2CustomView setDelegate:self];
+//    [self.f2CustomView setScrollable:YES];
+//    [self.f2CustomView setScale:0.9f];
+//    [self.f2CustomView setAppJSONConfig:@"[{\"appId\": \"com_openf2_examples_csharp_stocknews\",\n\"manifestUrl\": \"http://www.openf2.org/Examples/Apps\",\n\"name\": \"Stock News\"\n}]"];
+//    [self.f2CustomView loadApp];
+//    [flipContainer addSubview:self.f2CustomView];
+//    
     CGRect _editViewFrame = flipContainer.bounds;
     _editViewFrame.size.height = 336;
     self.customEditView = [[UIView alloc]initWithFrame:_editViewFrame];
